@@ -7,19 +7,36 @@ namespace LearnProgrammingAcademy.Learning
     public class Demo : MonoBehaviour
     {
         int lives = 3;
-        string playerName = "Karl";
-        bool gameOver; // false by default
+        int score;
+        int coinCount = 90;
 
+        int itemCount = 24;
+        int itemsPerPage = 5;
 
         private void Start()
         {
-            print("Hello");
-            Debug.Log("Hello Log");
+            Debug.LogFormat("score= " + score);
+            score += 10; 
+            Debug.LogFormat("score = {0}, lives = {1}", score, lives);
+            lives--;
+            Debug.LogFormat("score = {0}, lives = {1}", score, lives);
 
-            Debug.Log("player " + playerName + " has " + lives + " lives left.");
-            Debug.LogFormat("Player {0} has {1} lives left", playerName, lives);
+            score *= 2;
+            Debug.LogFormat("score = {0}, lives = {1}", score, lives);
+
+            score /= 2;
+            Debug.LogFormat("score = {0}, lives = {1}", score, lives);
+
+            coinCount += 40;
+            Debug.LogFormat("coinCount = {0}", coinCount);
+
+            coinCount = coinCount % 100;
+            Debug.LogFormat("coinCount = {0}", coinCount);
+
+            int remainingItems = itemCount % itemsPerPage;
+            Debug.LogFormat("remainingItems = {0}", remainingItems);
+
         }
-
     }
 
 }
