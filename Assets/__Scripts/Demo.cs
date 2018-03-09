@@ -9,35 +9,27 @@ namespace LearnProgrammingAcademy.Learning
         int lives = 3;
         int score;
         int coinCount = 90;
-
-        int itemCount = 24;
-        int itemsPerPage = 5;
+        bool gameOver;
 
         private void Start()
         {
-            Debug.LogFormat("score= " + score);
-            score += 10; 
-            Debug.LogFormat("score = {0}, lives = {1}", score, lives);
-            lives--;
-            Debug.LogFormat("score = {0}, lives = {1}", score, lives);
+           // lives = 0;
+            while ( lives > 0)
+            {
+                Debug.LogFormat("lives =  {0}", lives);
+                lives--;
+            }
+            Debug.Log("after while loop");
+            lives = 3;
 
-            score *= 2;
-            Debug.LogFormat("score = {0}, lives = {1}", score, lives);
+            do
+            {
+                coinCount += 20;
+                lives--;
+            } while (lives > 0);
 
-            score /= 2;
-            Debug.LogFormat("score = {0}, lives = {1}", score, lives);
-
-            coinCount += 40;
-            Debug.LogFormat("coinCount = {0}", coinCount);
-
-            coinCount = coinCount % 100;
-            Debug.LogFormat("coinCount = {0}", coinCount);
-
-            int remainingItems = itemCount % itemsPerPage;
-            Debug.LogFormat("remainingItems = {0}", remainingItems);
-
+            Debug.LogFormat("coins = {0}, lives = {1}", coinCount, lives);
         }
     }
-
 }
 
